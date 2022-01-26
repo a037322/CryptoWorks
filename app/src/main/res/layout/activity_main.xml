@@ -6,16 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/white">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/yale_blue">
+        android:background="@color/yale_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="210dp"
             android:layout_height="260dp"
-            android:orientation="vertical"
             android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -26,8 +31,8 @@
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:padding="10dp"
                 android:background="@drawable/rounded_white_background"
+                android:padding="10dp"
                 android:src="@drawable/ic_currency_bitcoin_24">
             </ImageView>
 
@@ -35,9 +40,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:text="CryptoWorks"
                 android:textColor="@color/white"
-                android:textSize="30dp"
-                android:text="CryptoWorks">
+                android:textSize="30sp">
             </TextView>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.constraintlayout.widget.ConstraintLayout>
