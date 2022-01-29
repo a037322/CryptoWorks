@@ -11,11 +11,14 @@
         <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/drawable/round_corners_bottom.xml" value="0.2703125" />
         <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/drawable/round_corners_icon_frame.xml" value="0.2703125" />
         <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/drawable/rounded_white_background.xml" value="0.2703125" />
-        <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/layout/activity_buy.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/layout/coin_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/rickb/AndroidStudioProjects/CryptoWorks/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*
 import io.ktor.client.features.json.*
@@ -42,12 +43,29 @@ class HomeActivity : AppCompatActivity(),ILoadMore {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        adapter = CoinAdapter(items)
         setContentView(R.layout.activity_home)
         supportActionBar?.hide()
+        /*val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+         bottomNavigationView.setOnItemSelectedListener {
+             when(it.itemId){
+                 R.id.buy_icon -> {
+
+                 }
+                 R.id.home_icon -> {
+
+                 }
+                 R.id.profile_icon -> {
+
+                 }
+             }
+             true*/
         swipe_to_refresh.post(this::loadCoinsCallback)
 
         swipe_to_refresh.setOnRefreshListener(this::loadCoinsCallback)
 
+        coin_recycler_view.adapter = adapter
         coin_recycler_view.layoutManager = LinearLayoutManager(this)
         setUpAdapter()
     }
@@ -81,8 +99,6 @@ class HomeActivity : AppCompatActivity(),ILoadMore {
     }
 
     private fun setUpAdapter() {
-        adapter = CoinAdapter(coin_recycler_view, this@HomeActivity, items)
-        coin_recycler_view.adapter = adapter
         adapter.setLoadMore(this)
     }
 }
