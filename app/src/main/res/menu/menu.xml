@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/home_icon"
         android:icon="@drawable/ic_baseline_home_24"
@@ -7,9 +8,9 @@
         android:visible="true">
     </item>
     <item
-        android:id="@+id/buy_icon"
-        android:icon="@drawable/ic_baseline_shop_24"
-        android:title="Comprar"
+        android:id="@+id/my_coins_icon"
+        android:icon="@drawable/ic_baseline_currency_bitcoin_24"
+        android:title="Minhas Moedas"
         android:visible="true">
     </item>
     <item

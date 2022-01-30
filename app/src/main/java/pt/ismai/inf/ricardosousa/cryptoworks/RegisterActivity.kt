@@ -7,12 +7,21 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+
+    private lateinit var database: DatabaseReference
+
     lateinit var email: EditText
     lateinit var confirm_email: EditText
+    lateinit var lastName: EditText
+    lateinit var  firstName: EditText
     lateinit var password: EditText
     lateinit var confirm_password: EditText
     lateinit var register_button: Button
@@ -27,6 +36,10 @@ class RegisterActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         email = findViewById(R.id.editTextEmail)
+
+        lastName = findViewById(R.id.editTextPersonLastName)
+
+        firstName = findViewById(R.id.editTextPersonFirstName)
 
         /*confirm_email = findViewById(R.id.editTextConfirmEmail)*/
 
@@ -55,13 +68,13 @@ class RegisterActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
                 }
                 else -> {
-                    registerUser(email.text.toString(), password.text.toString())
+                    registerUser(email.text.toString(), lastName.text.toString(), firstName.text.toString(), password.text.toString())
                 }
             }
         }
     }
 
-    private fun registerUser(email: String, password: String)
+    private fun registerUser(email: String,lastName: String, firstName: String, password: String)
     {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this){ task ->
@@ -77,5 +90,8 @@ class RegisterActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
                 }
             }
+        database = FirebaseDatabase.getInstance().getReference("Users")
+        val user = User(email, lastName, firstName)
+        database.child(firstName).setValue(user)
     }
 }

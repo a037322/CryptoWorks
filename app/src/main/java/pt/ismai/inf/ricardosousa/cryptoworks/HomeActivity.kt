@@ -1,5 +1,6 @@
 package pt.ismai.inf.ricardosousa.cryptoworks
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -45,21 +46,9 @@ class HomeActivity : AppCompatActivity(),ILoadMore {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         supportActionBar?.hide()
-        /*val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        switchActivities(bottomNavigationView)
 
-         bottomNavigationView.setOnItemSelectedListener {
-             when(it.itemId){
-                 R.id.buy_icon -> {
-
-                 }
-                 R.id.home_icon -> {
-
-                 }
-                 R.id.profile_icon -> {
-
-                 }
-             }
-             true*/
         swipe_to_refresh.post(this::loadCoinsCallback)
 
         swipe_to_refresh.setOnRefreshListener(this::loadCoinsCallback)
@@ -70,7 +59,6 @@ class HomeActivity : AppCompatActivity(),ILoadMore {
         coin_recycler_view.adapter = adapter
         setUpAdapter()
     }
-
 
     private suspend fun loadCoins(start: Int, limit:Int)= coroutineScope {
         async {
@@ -101,5 +89,26 @@ class HomeActivity : AppCompatActivity(),ILoadMore {
 
     private fun setUpAdapter() {
         adapter.setLoadMore(this)
+    }
+
+    private fun switchActivities(bottomNavigationView: BottomNavigationView) {
+
+
+        bottomNavigationView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.my_coins_icon -> {
+                    val intent0 = Intent(this, MyCoinsActivity::class.java)
+                    startActivity(intent0)
+                }
+                R.id.home_icon -> {
+
+                }
+                R.id.profile_icon -> {
+                    val intent2 = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent2)
+                }
+            }
+            true
+        }
     }
 }
