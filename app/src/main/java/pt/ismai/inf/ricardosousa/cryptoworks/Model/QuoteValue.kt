@@ -1,6 +1,7 @@
 package pt.ismai.inf.ricardosousa.cryptoworks.Model
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import java.io.Serializable
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class QuoteValue(
@@ -8,4 +9,4 @@ data class QuoteValue(
     var percent_change_1h: Double,
     var percent_change_24h: Double,
     var percent_change_7d: Double
-)
+) : Serializable

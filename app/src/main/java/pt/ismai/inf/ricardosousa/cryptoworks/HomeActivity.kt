@@ -43,7 +43,6 @@ class HomeActivity : AppCompatActivity(),ILoadMore {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        adapter = CoinAdapter(items)
         setContentView(R.layout.activity_home)
         supportActionBar?.hide()
         /*val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
@@ -65,8 +64,10 @@ class HomeActivity : AppCompatActivity(),ILoadMore {
 
         swipe_to_refresh.setOnRefreshListener(this::loadCoinsCallback)
 
+        val linearLayoutManager = LinearLayoutManager(this)
+        coin_recycler_view.layoutManager = linearLayoutManager
+        adapter = CoinAdapter(coin_recycler_view, linearLayoutManager, items)
         coin_recycler_view.adapter = adapter
-        coin_recycler_view.layoutManager = LinearLayoutManager(this)
         setUpAdapter()
     }
 
